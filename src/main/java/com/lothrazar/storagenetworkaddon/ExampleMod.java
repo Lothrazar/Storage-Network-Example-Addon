@@ -22,7 +22,6 @@ public class ExampleMod {
     MinecraftForge.EVENT_BUS.register(registry);
     registry.addBlock(new BlockSimpleCable(Material.ROCK), "simple_cable");
     logger = event.getModLog();
-
   }
 
   @EventHandler

@@ -34,6 +34,7 @@ public class AddonRegistry {
       event.getRegistry().register(item);
     }
   }
+
   @SideOnly(Side.CLIENT)
   @SubscribeEvent
   public void registerModels(ModelRegistryEvent event) {
