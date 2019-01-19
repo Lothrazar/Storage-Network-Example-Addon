@@ -5,21 +5,14 @@ import mrriegel.storagenetwork.data.EnumFilterDirection;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 
 public class TileSimpleCable extends TileEntity implements ICableStorage {
 
   @Override
-  public BlockPos getConnectedInventory() {
-    //for testing: always only connects to the block above
-    return this.pos.up();
-  }
-
-  @Override
   public IItemHandler getInventory() {
-    TileEntity tile = world.getTileEntity(getConnectedInventory());
+    TileEntity tile = world.getTileEntity(this.pos.up());
     if (tile.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN)) {
       return tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.DOWN);
     }
@@ -37,7 +30,7 @@ public class TileSimpleCable extends TileEntity implements ICableStorage {
   }
 
   @Override
-  public boolean isStorageCable() {
+  public boolean isStorageEnabled() {
     return true;
   }
 }
