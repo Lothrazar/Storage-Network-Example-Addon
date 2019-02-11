@@ -1,17 +1,17 @@
 package com.lothrazar.storagenetworkaddon;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.ITileEntityProvider;
-import net.minecraft.block.material.Material;
+import javax.annotation.Nullable;
+import mrriegel.storagenetwork.block.cable.BlockCableWithFacing;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class BlockSimpleCable extends Block implements ITileEntityProvider {
+public class BlockSimpleCable extends BlockCableWithFacing {
 
-  public BlockSimpleCable(Material materialIn) {
-    super(materialIn);
+  public BlockSimpleCable(String registryName) {
+    super(registryName);
   }
 
+  @Nullable
   @Override
   public TileEntity createNewTileEntity(World worldIn, int meta) {
     return new TileSimpleCable();

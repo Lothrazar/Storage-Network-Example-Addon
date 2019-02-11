@@ -21,11 +21,14 @@ public class AddonRegistry {
   private static List<Item> itemList = new ArrayList<Item>();
   private static List<Block> blocks = new ArrayList<Block>();
 
+  public AddonRegistry() {
+  }
+
   @SubscribeEvent
   public void onRegistryEvent(RegistryEvent.Register<Block> event) {
     event.getRegistry().registerAll(blocks.toArray(new Block[0]));
     GameRegistry.registerTileEntity(TileSimpleCable.class,
-        new ResourceLocation(ExampleMod.MODID, "simple_cable"));
+        new ResourceLocation(ExampleMod.MODID, "simple_cable_te"));
   }
 
   @SubscribeEvent
@@ -42,15 +45,15 @@ public class AddonRegistry {
     Item item;
     for (Block block : blocks) {
       item = Item.getItemFromBlock(block);
-      name = ExampleMod.MODID + ":" + block.getUnlocalizedName().replaceAll("tile.", "");
+      name = block.getUnlocalizedName().replaceAll("tile.", "");
       ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(name, "inventory"));
       ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(name));
     }
   }
 
   public void addBlock(BlockSimpleCable block, String name) {
-    block.setUnlocalizedName(name).setRegistryName(
-        new ResourceLocation(ExampleMod.MODID, name));
+    //    block.setUnlocalizedName(name).setRegistryName(
+    //        new ResourceLocation(ExampleMod.MODID, name));
     block.setCreativeTab(CreativeTabs.REDSTONE);
     blocks.add(block);
     ItemBlock ib = new ItemBlock(block);
