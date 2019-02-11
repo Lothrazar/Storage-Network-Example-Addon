@@ -1,7 +1,10 @@
-package com.lothrazar.storagenetworkaddon;
+package com.lothrazar.storagenetworkaddon.registry;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.lothrazar.storagenetworkaddon.StorageNetAddon;
+import com.lothrazar.storagenetworkaddon.block.BlockSimpleCable;
+import com.lothrazar.storagenetworkaddon.block.TileSimpleCable;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -28,7 +31,7 @@ public class AddonRegistry {
   public void onRegistryEvent(RegistryEvent.Register<Block> event) {
     event.getRegistry().registerAll(blocks.toArray(new Block[0]));
     GameRegistry.registerTileEntity(TileSimpleCable.class,
-        new ResourceLocation(ExampleMod.MODID, "simple_cable_te"));
+        new ResourceLocation(StorageNetAddon.MODID, "simple_cable_te"));
   }
 
   @SubscribeEvent
@@ -52,8 +55,6 @@ public class AddonRegistry {
   }
 
   public void addBlock(BlockSimpleCable block, String name) {
-    //    block.setUnlocalizedName(name).setRegistryName(
-    //        new ResourceLocation(ExampleMod.MODID, name));
     block.setCreativeTab(CreativeTabs.REDSTONE);
     blocks.add(block);
     ItemBlock ib = new ItemBlock(block);

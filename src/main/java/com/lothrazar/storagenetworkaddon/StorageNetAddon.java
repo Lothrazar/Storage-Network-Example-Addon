@@ -1,6 +1,9 @@
 package com.lothrazar.storagenetworkaddon;
 
 import org.apache.logging.log4j.Logger;
+import com.lothrazar.storagenetworkaddon.block.BlockSimpleCable;
+import com.lothrazar.storagenetworkaddon.block.TileSimpleCable;
+import com.lothrazar.storagenetworkaddon.registry.AddonRegistry;
 import mrriegel.storagenetwork.block.cable.TesrCable;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -10,8 +13,8 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = ExampleMod.MODID)
-public class ExampleMod {
+@Mod(modid = StorageNetAddon.MODID, certificateFingerprint = "@FINGERPRINT@")
+public class StorageNetAddon {
 
   public static final String MODID = "storagenetworkaddon";
   private static Logger logger;

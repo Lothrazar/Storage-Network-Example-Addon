@@ -1,0 +1,22 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "group": "storagenetworkaddon",
+  "pattern": [
+    " k ",
+    "kpk",
+	" k "
+  ],
+  "key": {
+    "k": {
+      "item": "storagenetwork:kabel"
+    },
+    "p":  {
+	  "item": "minecraft:chest"
+	}
+  },
+  "result": {
+    "item": "storagenetworkaddon:simple_cable",
+	 "count": 4
+  }
+}

@@ -1,4 +1,4 @@
-package com.lothrazar.storagenetworkaddon;
+package com.lothrazar.storagenetworkaddon.block;
 
 import javax.annotation.Nullable;
 import mrriegel.storagenetwork.block.cable.BlockCableWithFacing;
