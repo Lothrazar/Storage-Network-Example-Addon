@@ -9,10 +9,10 @@
   ],
   "key": {
     "k": {
-      "item": "storagenetwork:kabel"
+      "item": "minecraft:chest"
     },
     "p":  {
-	  "item": "minecraft:stone"
+	  "item": "minecraft:crafting_table"
 	}
   },
   "result": {
