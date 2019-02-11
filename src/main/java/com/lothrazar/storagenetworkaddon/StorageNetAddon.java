@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = StorageNetAddon.MODID, certificateFingerprint = "@FINGERPRINT@")
+@Mod(modid = StorageNetAddon.MODID, certificateFingerprint = "@FINGERPRINT@", updateJSON = "https://raw.githubusercontent.com/Lothrazar/Storage-Network-Example-Addon/master/update.json")
 public class StorageNetAddon {
 
   public static final String MODID = "storagenetworkaddon";
